@@ -18,7 +18,9 @@ const Header: React.FC = () => {
         <div className="hidden md:flex justify-center items-center gap-4 lg:gap-8">
           {NavItems.map((NavItem, index) => (
             <Link to={NavItem.link} key={index}>
-              <span className="text-indigo-700 flex justify-center items-center gap-1 text-md lg:text-xl">{NavItem.name} {NavItem.icon}</span>
+              <span className="text-indigo-700 flex justify-center items-center gap-1 text-md lg:text-xl">
+                {NavItem.name} {NavItem.icon}
+              </span>
             </Link>
           ))}
         </div>
