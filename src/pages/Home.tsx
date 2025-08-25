@@ -10,12 +10,15 @@ import "swiper/css";
 import "swiper/swiper-bundle.css";
 import "swiper/modules";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { BiComment } from "react-icons/bi";
+import CommentCard from "../components/CommentCard";
+import Comments from "../layout/Comments";
 
 const Home: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="w-full h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center">
+      <div className="w-full min-h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center">
         <h1 className="text-3xl text-center w-2/3 font-bold md:text-5xl lg:text-7xl">
           هرچیزی که نیاز داشته باشی میتونی اینجا پیدا کنی
         </h1>
@@ -25,8 +28,8 @@ const Home: React.FC = () => {
           </button>
         </Link>
       </div>
-      <div className="w-full h-screen flex justify-center items-center">
-        <div className="bg-indigo-100 w-[95%] h-[95%] rounded-lg flex flex-col items-center">
+      <div className="w-full min-h-screen flex justify-center items-center flex-col mt-6 gap-16">
+        <div className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4">
           <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
             <span className="flex justify-center items-center">
               کالاهای پرفروش
@@ -50,9 +53,10 @@ const Home: React.FC = () => {
                 nextEl: ".nextEl",
                 prevEl: ".prevEl",
               }}
+              grabCursor
               autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
               loop={true}
-              slidesPerView={1.4}
+              slidesPerView={1}
               spaceBetween={50}
               breakpoints={{
                 640: { slidesPerView: 1.8 },
@@ -76,6 +80,37 @@ const Home: React.FC = () => {
                     </SwiperSlide>
                   )
               )}
+            </Swiper>
+          </div>
+        </div>
+        <div className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4">
+          <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
+            <span className="flex justify-center items-center">
+              نظرات کاربران
+              <BiComment className="text-indigo-700 size-6 m-1" />
+            </span>
+          </div>
+          <div className="w-[98%] h-0.5 bg-indigo-200"></div>
+          <div className="w-[95%] rounded-xl bg-indigo-300 p-4 mt-6">
+            <Swiper
+              modules={[Autoplay]}
+              grabCursor
+              autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+              loop={true}
+              slidesPerView={1}
+              spaceBetween={70}
+              breakpoints={{
+                640: { slidesPerView: 1.8 },
+                768: { slidesPerView: 2.3 },
+                1024: { slidesPerView: 2.8 },
+              }}
+              className="w-[90%] mx-auto rounded-xl"
+            >
+              {Comments.map((comment,index)=> (
+                <SwiperSlide key={index}>
+                  <CommentCard comment={comment} />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>
