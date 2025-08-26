@@ -13,6 +13,7 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { BiComment } from "react-icons/bi";
 import CommentCard from "../components/CommentCard";
 import Comments from "../layout/Comments";
+import Footer from "../layout/Footer";
 
 const Home: React.FC = () => {
   return (
@@ -158,13 +159,23 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="flex justify-center items-center bg-indigo-100 w-[95%] rounded-lg flex-col p-4 mb-4">
-          <p className="text-indigo-800 text-2xl md:text-3xl lg:text-4xl w-2/3 text-center">میخوای زودتر از بقیه از تخفیفات و جایزه ها باخبر بشی؟</p>
+          <p className="text-indigo-800 text-2xl md:text-3xl lg:text-4xl w-2/3 text-center">
+            میخوای زودتر از بقیه از تخفیفات و جایزه ها باخبر بشی؟
+          </p>
           <div className="flex rounded-lg overflow-hidden justify-center items-center mt-6 border-2 border-indigo-800">
-            <input type="email" className="bg-indigo-300 p-2 text-center outline-none" placeholder="example@mail.com" required/>
-            <button className="p-2 bg-indigo-600 text-white cursor-pointer">ثبت</button>
+            <input
+              type="email"
+              className="bg-indigo-300 p-2 text-center outline-none"
+              placeholder="example@mail.com"
+              required
+            />
+            <button className="p-2 bg-indigo-600 text-white cursor-pointer">
+              ثبت
+            </button>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

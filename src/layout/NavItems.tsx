@@ -1,4 +1,3 @@
-import React from "react";
 import type { navType } from "../types/NavItem";
 import { IoMdHome } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";

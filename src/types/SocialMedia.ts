@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 
-export type navType = {
+export type socialMedia = {
   name: string;
   icon: ReactElement;
   link: string;
