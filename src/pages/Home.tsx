@@ -7,8 +7,8 @@ import Card from "../components/Card";
 import products from "../layout/ProductItems";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/swiper-bundle.css";
-import "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { BiComment } from "react-icons/bi";
 import CommentCard from "../components/CommentCard";
@@ -55,28 +55,49 @@ const Home: React.FC = () => {
               }}
               grabCursor
               autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
-              loop={true}
+              loop
               slidesPerView={1}
-              spaceBetween={50}
+              spaceBetween={20}
               breakpoints={{
-                640: { slidesPerView: 1.8 },
-                768: { slidesPerView: 2.3 },
-                1024: { slidesPerView: 3.4 },
+                480: {
+                  slidesPerView: 1.2,
+                  centeredSlides: true,
+                },
+                640: {
+                  slidesPerView: 1.5,
+                  centeredSlides: true,
+                },
+                768: {
+                  slidesPerView: 2,
+                  centeredSlides: false,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  centeredSlides: false,
+                },
+                1280: {
+                  slidesPerView: 3.5,
+                  centeredSlides: false,
+                },
               }}
-              className="w-[90%] mx-auto rounded-xl"
+              className="w-full max-w-6xl mx-auto"
             >
               {products.map(
                 (product, index) =>
                   product.score > 4 && (
-                    <SwiperSlide>
-                      <Card
-                        key={index}
-                        imageUrl={product.imageUrl}
-                        name={product.name}
-                        score={product.score}
-                        oldPrice={product.oldPrice}
-                        newPrice={product.newPrice}
-                      />
+                    <SwiperSlide
+                      key={index}
+                      className="!h-auto flex justify-center"
+                    >
+                      <div className="h-full flex justify-center items-stretch p-2">
+                        <Card
+                          imageUrl={product.imageUrl}
+                          name={product.name}
+                          score={product.score}
+                          oldPrice={product.oldPrice}
+                          newPrice={product.newPrice}
+                        />
+                      </div>
                     </SwiperSlide>
                   )
               )}
@@ -96,19 +117,41 @@ const Home: React.FC = () => {
               modules={[Autoplay]}
               grabCursor
               autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
-              loop={true}
+              loop
               slidesPerView={1}
-              spaceBetween={70}
+              spaceBetween={20}
               breakpoints={{
-                640: { slidesPerView: 1.8 },
-                768: { slidesPerView: 2.3 },
-                1024: { slidesPerView: 2.8 },
+                480: {
+                  slidesPerView: 1.2,
+                  centeredSlides: true,
+                },
+                640: {
+                  slidesPerView: 1.5,
+                  centeredSlides: true,
+                },
+                768: {
+                  slidesPerView: 2,
+                  centeredSlides: false,
+                },
+                1024: {
+                  slidesPerView: 2.5,
+                  centeredSlides: false,
+                },
+                1280: {
+                  slidesPerView: 3,
+                  centeredSlides: false,
+                },
               }}
-              className="w-[90%] mx-auto rounded-xl"
+              className="w-full max-w-5xl mx-auto"
             >
-              {Comments.map((comment,index)=> (
-                <SwiperSlide key={index}>
-                  <CommentCard comment={comment} />
+              {Comments.map((comment, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!h-auto flex justify-center"
+                >
+                  <div className="h-full flex justify-center items-stretch p-2">
+                    <CommentCard comment={comment} />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
