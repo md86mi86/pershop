@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../layout/Header";
 import { Link } from "react-router";
 import { BiDollar } from "react-icons/bi";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,12 +12,10 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { BiComment } from "react-icons/bi";
 import CommentCard from "../components/CommentCard";
 import Comments from "../layout/Comments";
-import Footer from "../layout/Footer";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Header />
       <div className="w-full min-h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center">
         <h1 className="text-3xl text-center w-2/3 font-bold md:text-5xl lg:text-7xl">
           هرچیزی که نیاز داشته باشی میتونی اینجا پیدا کنی
@@ -175,7 +172,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

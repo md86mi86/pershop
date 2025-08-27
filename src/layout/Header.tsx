@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
 import NavItems from "./NavItems";
 
 const Header: React.FC = () => {
+  const loc = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
     <>
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
         <div className="hidden md:flex justify-center items-center gap-4 lg:gap-8">
           {NavItems.map((NavItem, index) => (
             <Link to={NavItem.link} key={index}>
-              <span className="text-indigo-700 flex justify-center items-center gap-1 text-md lg:text-xl">
+              <span className={`${loc.pathname === NavItem.link && "bg-indigo-500 text-white rounded-md p-1 transition-all"} text-indigo-700 flex justify-center items-center gap-1 text-md lg:text-xl`}>
                 {NavItem.name} {NavItem.icon}
               </span>
             </Link>
@@ -44,7 +45,10 @@ const Header: React.FC = () => {
           <div className="flex flex-col justify-center items-center gap-1 p-2">
             {NavItems.map((navItem, index) => (
               <Link className="w-full" key={index} to={navItem.link}>
-                <div className="bg-gray-50 w-full p-2 rounded-md flex justify-between items-center gap-2 text-indigo-700 transition-all hover:bg-indigo-50 border-2">
+                <div
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`${loc.pathname === navItem.link && "bg-indigo-600 text-white border-indigo-200"} bg-gray-50 w-full p-2 rounded-md flex justify-between items-center gap-2 text-indigo-700 transition-all hover:bg-indigo-50 border-2`}
+                >
                   {navItem.name} <span className="text-xl">{navItem.icon}</span>
                 </div>
               </Link>
