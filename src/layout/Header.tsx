@@ -64,7 +64,7 @@ const Header: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`${
                     loc.pathname === navItem.link &&
-                    "bg-indigo-600 text-white border-indigo-200"
+                    "bg-indigo-600 text-white border-indigo-200 hover:bg-indigo-700"
                   } bg-gray-50 w-full p-2 rounded-md flex justify-between items-center gap-2 text-indigo-700 transition-all hover:bg-indigo-50 border-2`}
                 >
                   {navItem.name} <span className="text-xl">{navItem.icon}</span>
