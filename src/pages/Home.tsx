@@ -12,22 +12,43 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { BiComment } from "react-icons/bi";
 import CommentCard from "../components/CommentCard";
 import Comments from "../layout/Comments";
+import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <div className="w-full min-h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center">
-        <h1 className="text-3xl text-center w-2/3 font-bold md:text-5xl lg:text-7xl">
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        className="w-full min-h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center"
+      >
+        <motion.h1
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-3xl text-center w-2/3 font-bold md:text-5xl lg:text-7xl"
+        >
           هرچیزی که نیاز داشته باشی میتونی اینجا پیدا کنی
-        </h1>
+        </motion.h1>
         <Link to="/about_us">
-          <button className="cursor-pointer mt-6 md:mt-8 lg:mt-12 p-2 bg-indigo-600 border-2 border-indigo-500 shadow-2xl shadow-indigo-400 rounded-md font-bold text-white text-xl md:text-2xl lg:text-3xl">
+          <motion.button
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="cursor-pointer mt-6 md:mt-8 lg:mt-12 p-2 bg-indigo-600 border-2 border-indigo-500 shadow-2xl shadow-indigo-400 rounded-md font-bold text-white text-xl md:text-2xl lg:text-3xl"
+          >
             همین حالا خرید کن
-          </button>
+          </motion.button>
         </Link>
-      </div>
+      </motion.div>
       <div className="w-full min-h-screen flex justify-center items-center flex-col mt-6 gap-16">
-        <div className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ amount: 0.3, once: true }}
+          className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4"
+        >
           <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
             <span className="flex justify-center items-center">
               کالاهای پرفروش
@@ -101,8 +122,14 @@ const Home: React.FC = () => {
               )}
             </Swiper>
           </div>
-        </div>
-        <div className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4">
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ amount: 0.3, once: true }}
+          className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4"
+        >
           <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
             <span className="flex justify-center items-center">
               نظرات کاربران
@@ -154,8 +181,14 @@ const Home: React.FC = () => {
               ))}
             </Swiper>
           </div>
-        </div>
-        <div className="flex justify-center items-center bg-indigo-100 w-[95%] rounded-lg flex-col p-4 mb-4">
+        </motion.div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ amount: 0.3, once: true }}
+          className="flex justify-center items-center bg-indigo-100 w-[95%] rounded-lg flex-col p-4 mb-4"
+        >
           <p className="text-indigo-800 text-2xl md:text-3xl lg:text-4xl w-2/3 text-center">
             میخوای زودتر از بقیه از تخفیفات و جایزه ها باخبر بشی؟
           </p>
@@ -170,7 +203,7 @@ const Home: React.FC = () => {
               ثبت
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

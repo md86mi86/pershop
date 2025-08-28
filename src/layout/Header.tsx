@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { MdMenu } from "react-icons/md";
 import { Link, useLocation } from "react-router";
-import { motion } from "framer-motion";
 import NavItems from "./NavItems";
+import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
   const loc = useLocation();
@@ -19,7 +19,11 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
   return (
     <>
-      <header className="w-full p-4 flex justify-between items-center z-10">
+      <motion.header
+        initial={{ y: "-100%"}}
+        animate={{y : 0}}
+        className="w-full p-4 flex justify-between items-center z-10"
+      >
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="cursor-pointer bg-indigo-600 text-white p-1 rounded-full flex justify-center items-center hover:text-indigo-600 hover:bg-white transition-all md:hidden"
@@ -45,7 +49,7 @@ const Header: React.FC = () => {
             پرشاپ
           </span>
         </Link>
-      </header>
+      </motion.header>
       <motion.div
         initial={{ x: "100%" }}
         transition={{ duration: 1 }}

@@ -1,8 +1,15 @@
 import type { productItem } from "../types/ProductItem";
+import { motion } from "framer-motion";
 
 const Card = ({ imageUrl, name, score, oldPrice, newPrice }: productItem) => {
   return (
-    <div className="bg-white rounded-xl overflow-hidden max-w-xs sm:max-w-sm md:max-w-md w-full flex flex-col justify-center relative shadow-md -z-0">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ amount: 0.3, once: false }}
+      className="bg-white rounded-xl overflow-hidden max-w-xs sm:max-w-sm md:max-w-md w-full flex flex-col justify-center relative shadow-md -z-0"
+    >
       <span className="absolute bg-red-600 top-2 left-2 text-white rounded-lg w-10 h-10 text-center flex justify-center items-center text-sm font-bold">
         {Math.round(((oldPrice - newPrice) / oldPrice) * 100)}%
       </span>
@@ -26,7 +33,7 @@ const Card = ({ imageUrl, name, score, oldPrice, newPrice }: productItem) => {
           خرید
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
