@@ -7,8 +7,8 @@ const Card = ({ imageUrl, name, score, oldPrice, newPrice }: productItem) => {
       initial={{ y: 100, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      viewport={{ amount: 0.3, once: false }}
-      className="bg-white rounded-xl overflow-hidden max-w-xs sm:max-w-sm md:max-w-md w-full flex flex-col justify-center relative shadow-md -z-0"
+      viewport={{ amount: 0.3, once: true }}
+      className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden max-w-xs sm:max-w-sm md:max-w-md w-full flex flex-col justify-center relative shadow-md -z-0"
     >
       <span className="absolute bg-red-600 top-2 left-2 text-white rounded-lg w-10 h-10 text-center flex justify-center items-center text-sm font-bold">
         {Math.round(((oldPrice - newPrice) / oldPrice) * 100)}%
@@ -26,10 +26,10 @@ const Card = ({ imageUrl, name, score, oldPrice, newPrice }: productItem) => {
         <p className="p-2 line-through text-gray-400 text-[14px]">
           {oldPrice.toLocaleString()} تومان
         </p>
-        <p className="px-2 pb-4 text-indigo-800 font-bold text-lg">
+        <p className="px-2 pb-4 text-custom-800 font-bold text-lg">
           {newPrice.toLocaleString()} تومان
         </p>
-        <button className="w-[90%] bg-indigo-700 text-white rounded-lg mx-auto p-2 cursor-pointer text-lg mb-4 transition hover:bg-indigo-800">
+        <button className="w-[90%] bg-custom-700 text-white rounded-lg mx-auto p-2 cursor-pointer text-lg mb-4 transition hover:bg-custom-800">
           خرید
         </button>
       </div>

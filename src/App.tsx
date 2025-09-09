@@ -6,7 +6,7 @@ import Footer from "./layout/Footer";
 
 const App: React.FC = () => {
   return (
-    <div className="select-none">
+    <div className="select-none dark:bg-black dark:text-white">
       <BrowserRouter>
         <Header />
         <AppRoutes />

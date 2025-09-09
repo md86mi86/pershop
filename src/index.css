@@ -1,10 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
 
 @import "tailwindcss";
 
-
 @layer base {
-    * {
-        font-family: "Vazirmatn", sans-serif;
-    }
+  * {
+    font-family: "Vazirmatn", sans-serif;
+  }
 }
+
+@theme {
+  --color-custom-50: #edf9ff;
+  --color-custom-100: #d6efff;
+  --color-custom-200: #b5e5ff;
+  --color-custom-300: #83d7ff;
+  --color-custom-400: #48beff;
+  --color-custom-500: #1e9dff;
+  --color-custom-600: #067dff;
+  --color-custom-700: #0069ff;
+  --color-custom-800: #0850c5;
+  --color-custom-900: #0d479b;
+  --color-custom-950: #0e2c5d;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

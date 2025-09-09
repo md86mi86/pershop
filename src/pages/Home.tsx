@@ -20,7 +20,7 @@ const Home: React.FC = () => {
       <motion.div
         initial={{ y: 100 }}
         animate={{ y: 0 }}
-        className="w-full min-h-screen bg-gradient-to-br from-indigo-200 to-indigo-300 flex flex-col justify-center items-center"
+        className="w-full min-h-screen bg-gradient-to-br from-custom-200 dark:from-custom-950 dark:to-gray-950 dark:text-white to-custom-300 flex flex-col justify-center items-center"
       >
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="cursor-pointer mt-6 md:mt-8 lg:mt-12 p-2 bg-indigo-600 border-2 border-indigo-500 shadow-2xl shadow-indigo-400 rounded-md font-bold text-white text-xl md:text-2xl lg:text-3xl"
+            className="cursor-pointer mt-6 md:mt-8 lg:mt-12 p-2 bg-custom-600 border-2 border-custom-500 shadow-2xl shadow-custom-400 dark:shadow-custom-900 rounded-md font-bold text-white text-xl md:text-2xl lg:text-3xl"
           >
             همین حالا خرید کن
           </motion.button>
@@ -47,24 +47,24 @@ const Home: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.3, once: true }}
-          className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4"
+          className="bg-custom-100 dark:bg-gray-900 w-[95%] rounded-lg flex flex-col items-center pb-4"
         >
-          <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
+          <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-custom-800 dark:text-white">
             <span className="flex justify-center items-center">
               کالاهای پرفروش
-              <BiDollar className="text-white bg-indigo-600 rounded-full size-6 p-0.5 m-1" />
+              <BiDollar className="text-white bg-custom-600 rounded-full size-6 p-0.5 m-1" />
             </span>
-            <Link to="/about_us">
-              <button className="bg-indigo-600 text-white p-2 rounded-lg cursor-pointer">
+            <Link to="/products">
+              <button className="bg-custom-600 text-white p-2 rounded-lg cursor-pointer">
                 مشاهده همه
               </button>
             </Link>
           </div>
-          <div className="w-[98%] h-0.5 bg-indigo-200"></div>
-          <div className="w-[95%] rounded-xl bg-indigo-300 p-4 mt-6">
-            <div className="w-full bg-indigo-600 p-2 rounded-xl mb-4 flex justify-center items-center gap-1">
-              <GrFormNext className="nextEl text-3xl p-1 bg-white rounded-full cursor-pointer" />
-              <GrFormPrevious className="prevEl text-3xl p-1 bg-white rounded-full cursor-pointer" />
+          <div className="w-[98%] h-0.5 bg-custom-200 dark:bg-gray-800"></div>
+          <div className="w-[95%] rounded-xl bg-custom-300 dark:bg-custom-950 p-4 mt-6">
+            <div className="w-full bg-custom-600 dark:bg-custom-800 p-2 rounded-xl mb-4 flex justify-center items-center gap-1">
+              <GrFormNext className="nextEl text-3xl p-1 bg-white rounded-full dark:bg-gray-950 cursor-pointer" />
+              <GrFormPrevious className="prevEl text-3xl p-1 bg-white rounded-full dark:bg-gray-950 cursor-pointer" />
             </div>
             <Swiper
               modules={[Navigation, Autoplay]}
@@ -128,16 +128,16 @@ const Home: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.3, once: true }}
-          className="bg-indigo-100 w-[95%] rounded-lg flex flex-col items-center pb-4"
+          className="bg-custom-100 dark:bg-gray-900 w-[95%] rounded-lg flex flex-col items-center pb-4"
         >
-          <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-indigo-800">
+          <div className="w-full flex justify-between items-center p-4 md:p-6 lg:p-8 text-lg md:text-xl lg:text-2xl text-custom-800 dark:text-white">
             <span className="flex justify-center items-center">
               نظرات کاربران
-              <BiComment className="text-indigo-700 size-6 m-1" />
+              <BiComment className="text-custom-700 size-6 m-1" />
             </span>
           </div>
-          <div className="w-[98%] h-0.5 bg-indigo-200"></div>
-          <div className="w-[95%] rounded-xl bg-indigo-300 p-4 mt-6">
+          <div className="w-[98%] h-0.5 bg-custom-200 dark:bg-gray-800"></div>
+          <div className="w-[95%] rounded-xl bg-custom-300 dark:bg-custom-950 p-4 mt-6">
             <Swiper
               modules={[Autoplay]}
               grabCursor
@@ -187,19 +187,19 @@ const Home: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ amount: 0.3, once: true }}
-          className="flex justify-center items-center bg-indigo-100 w-[95%] rounded-lg flex-col p-4 mb-4"
+          className="flex justify-center items-center bg-custom-100 dark:bg-gray-900 w-[95%] rounded-lg flex-col p-4 mb-4"
         >
-          <p className="text-indigo-800 text-2xl md:text-3xl lg:text-4xl w-2/3 text-center">
+          <p className="text-custom-800 text-2xl md:text-3xl lg:text-4xl w-2/3 text-center dark:text-white">
             میخوای زودتر از بقیه از تخفیفات و جایزه ها باخبر بشی؟
           </p>
-          <div className="flex rounded-lg overflow-hidden justify-center items-center mt-6 border-2 border-indigo-800">
+          <div className="flex rounded-lg overflow-hidden justify-center items-center mt-6 border-2 border-custom-800">
             <input
               type="email"
-              className="bg-indigo-300 p-2 text-center outline-none"
+              className="bg-custom-300 dark:bg-custom-950 p-2 text-center outline-none"
               placeholder="example@mail.com"
               required
             />
-            <button className="p-2 bg-indigo-600 text-white cursor-pointer">
+            <button className="p-2 bg-custom-600 text-white cursor-pointer">
               ثبت
             </button>
           </div>

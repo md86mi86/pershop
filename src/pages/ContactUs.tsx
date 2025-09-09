@@ -10,7 +10,7 @@ const ContactUs: React.FC = () => {
         initial={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.5, delay: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="text-2xl font-bold md:text-3xl lg:text-4xl text-indigo-800"
+        className="text-2xl font-bold md:text-3xl lg:text-4xl text-custom-800"
       >
         ارتباط با ما
       </motion.h2>
@@ -18,7 +18,7 @@ const ContactUs: React.FC = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="w-2/3 text-center mt-4 md:mt-6 lg:mt-8 md:text-lg lg:text-xl text-gray-700"
+        className="w-2/3 text-center mt-4 md:mt-6 lg:mt-8 md:text-lg lg:text-xl text-gray-700 dark:text-gray-300"
       >
         برای ارتباط با ما میتونی از گزینه های زیر استفاده کنی. ۲۴ ساعته جواب
         میدیم
@@ -30,7 +30,7 @@ const ContactUs: React.FC = () => {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-indigo-50 p-4 flex justify-center items-center flex-col gap-2 rounded-lg text-indigo-800 hover:bg-indigo-100 transition-all w-40 h-20 md:h-24"
+              className="bg-custom-50 dark:bg-custom-950 dark:text-custom-300 p-4 flex justify-center items-center flex-col gap-2 rounded-lg text-custom-800 hover:bg-custom-100 dark:hover:bg-custom-900 transition-all w-40 h-20 md:h-24"
             >
               <span className="text-2xl md:text-3xl lg:text-4xl">
                 {social.icon}
